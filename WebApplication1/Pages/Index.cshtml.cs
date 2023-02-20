@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
+using WebApplication1.src.services.interfaces;
 
 namespace WebApplication1.Pages
 {
@@ -7,9 +8,11 @@ namespace WebApplication1.Pages
     {
         private readonly ILogger<IndexModel> _logger;
 
-        public IndexModel(ILogger<IndexModel> logger)
+        private readonly ITodo _todo;
+        public IndexModel(ILogger<IndexModel> logger, ITodo itodo)
         {
             _logger = logger;
+            _todo = itodo;
         }
 
         public void OnGet()
