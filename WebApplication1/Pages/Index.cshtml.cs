@@ -6,10 +6,12 @@ using WebApplication1.src.services.services;
 
 namespace WebApplication1.Pages
 {
+     
     public class IndexModel : PageModel
     {
         private readonly ILogger<IndexModel> _logger;
         private readonly ITodoService _todoService;
+        public List<TodoModels> ShowToDoModels { get; set; }
 
 
         private readonly ITodoRepo _todo;
@@ -18,11 +20,11 @@ namespace WebApplication1.Pages
             _logger = logger;
             _todo = itodo;
             _todoService = todoService;
-        }
+        }   
 
         public void OnGet()
         {
-            var allTodoNotes = _todoService.GetAllTodoNotes();
+           ShowToDoModels = _todoService.GetAllTodoNotes();
         }
 
         public void Create()
