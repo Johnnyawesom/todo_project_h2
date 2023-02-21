@@ -4,7 +4,6 @@ using WebApplication1.src.services.interfaces;
 namespace WebApplication1.src.services.services
 
 {
-
     public class TodoService : ITodoService
     {
         public ITodoRepo _repo;
@@ -41,10 +40,10 @@ namespace WebApplication1.src.services.services
             throw new NotImplementedException();
         }
 
+
         public void Update(TodoModels todo)
         {
             throw new NotImplementedException();
         }
-
     }
 }

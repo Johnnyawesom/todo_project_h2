@@ -7,6 +7,8 @@ namespace WebApplication1.src.services.interfaces
         void CreateTodo(string name, string taskdescription, string title, bool isCompleted);
         void Delete(Guid id);
         List<TodoModels> GetAllTodoNotes();
+
+        TodoModels GetTodoById(Guid id);
         void Update(TodoModels todo);
     }
 
