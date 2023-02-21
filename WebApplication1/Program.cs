@@ -1,7 +1,15 @@
+using Microsoft.AspNetCore.Builder;
+using System.Net.NetworkInformation;
+using WebApplication1.src.services.interfaces;
+using WebApplication1.src.services.repositories;
+using WebApplication1.src.services.services;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddRazorPages();
+builder.Services.AddSingleton<ITodoRepo, TodoRepo>();
+builder.Services.AddSingleton<ITodoService, TodoService>();
 
 var app = builder.Build();
 
